@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NCV Card - Nguyễn Thị Tuyết Hậu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #E5E5E5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: #B2F2BB;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .avatar-box {
+      position: relative;
+      display: inline-block;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .qr-top {
+      position: absolute;
+      bottom: 0;
+      right: -40px;
+      background: white;
+      border-radius: 2px;
+      padding: 4px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin: 10px 0 4px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .subtitle {
+      color: #357;
+      margin-bottom: 16px;
+    }
+
+    .phone-button {
+      background-color: #8b004f;
+      color: white;
+      font-size: 18px;
+      padding: 12px;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      width: 80%;
+      margin-bottom: 16px;
+    }
+
+    .share-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      padding: 10px 0;
+      background-color: #f8f8f8;
+      border-radius: 12px;
+    }
+
+    .share-buttons div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .video-button {
+      background-color: #0033cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 10px auto;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .role-section, .icon-links {
+      margin-top: 20px;
+    }
+    .role-item {
+      display: flex;
+      align-items: center;
+      background: #f0fff0;
+      border-radius: 10px;
+      padding: 8px;
+      margin: 6px 0;
+      justify-content: space-between;
+    }
+    .role-item img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    .role-text {
+      flex: 1;
+      text-align: left;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    .icon-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .icon-links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      font-size: 12px;
+      width: 60px;
+      color: #000;
+    }
+
+    .icon-links img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 4px;
+    }
+
+    .language-switch-fixed {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 6px 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+
+    .language-switch-fixed .flag-icon {
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      transition: transform 0.2s ease;
+    }
+
+    .language-switch-fixed .flag-icon:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="language-switch-fixed">
+    <img src="https://flagcdn.com/w40/vn.png" alt="Tiếng Việt" title="Tiếng Việt" onclick="switchLang('vi')" class="flag-icon">
+    <img src="https://flagcdn.com/w40/us.png" alt="English" title="English" onclick="switchLang('en')" class="flag-icon">
+  </div>
+
+  <div class="container">
+    <div class="avatar-box">
+      <img src="https://i.ibb.co/pvFjbyzC/Jayden.jpg" alt="Avatar" class="avatar">
+      <div class="qr-top">
+        <img src="https://i.ibb.co/1G4bjXQB/Jayden.jpg" alt="QR" width="80">
+      </div>
+    </div>
+    <h1 id="title">Nguyễn Thị Tuyết Hậu</h1>
+    <div class="subtitle">Sales Logistics</div>
+    <a href="tel:+84 376 444 593" class="phone-button">📞 +84 376 444 593</a>
+
+    <div class="share-buttons">
+      <div onclick="navigator.share ? navigator.share({ title: document.title, url: location.href }) : alert('Trình duyệt không hỗ trợ')">🔗 Chia sẻ</div>
+      <div onclick="downloadVCard()">📇 Lưu Danh bạ</div>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/J0MAmvy7y8k?si=MqncRvvtpViXuCQT" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+    <div class="video-button" id="consultButton">Đăng Ký Tư Vấn</div>
+
+    <div class="info" id="description">
+      * Hoạt động trong lĩnh vực Logistics, chuyên cung cấp và điều phối các dịch vụ FCL/LCL & AIR FREIGHT, phụ trách CHÍNH thị trường Trung Quốc, UAE, EU và các tuyến Quốc tế khác.<br>
+      * Cung cấp giải pháp toàn diện từ: Tư vấn - Báo giá - Đặt chỗ - Theo dõi lô hàng - Khai báo hải quan - Vận tải nội địa,…<br>
+      * Luôn sẵn sàng hỗ trợ 24/7, đồng hành cùng khách hàng trong mọi khâu của chuỗi cung ứng đúng tiến độ và tối ưu chi phí.<br>
+    </div>
+
+    <div class="role-section">
+      <div class="role-item"><img src="https://i.ibb.co/VY0kfHdv/Logo-Nhon-My-700x700-2-150x150.png"><div class="role-text" id="role1">Sales Logistics – Công ty Long Hoàng Logistics</div><span>🔗</span></div>
+    </div>
+
+    <div class="icon-links">
+      <a href="https://zalo.me/0376444593" target="_blank">
+        <img src="https://i.ibb.co/d4nRhVQV/Zalo.png" alt="Zalo" border="0"/>
+        <span>Zalo</span>
+      </a>
+      <a href="https://i.ibb.co/F4T66yKh/Jayden-Whatapps.jpg" target="_blank">
+        <img src="https://i.ibb.co/XxqRB3Qg/Whatsapp.png" alt="Whatsapp" border="0"/>
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://i.ibb.co/CsQwSST7/Jayden-Wechat.jpg" target="_blank">
+        <img src="https://i.ibb.co/Zz41gSrk/Wechat.png" alt="Wechat" border="0"/>
+        <span>WeChat ID</span>
+      </a>
+      <a href="mailto:winnie@longhoanglogistics.com" target="_blank">
+        <img src="https://i.ibb.co/nqyMXyNM/Email.png" alt="Email" border="0"/>
+        <span>Email</span>
+      </a>
+      <a href="https://maps.app.goo.gl/ZSVFYotTCuGWNQmW8" target="_blank">
+        <img src="https://i.ibb.co/7dTZHSwV/Map.png" alt="Map" border="0"/>
+        <span>Địa Chỉ</span>
+      </a>
+      <a href="https://www.longhoanglogistics.com" target="_blank">
+        <img src="https://i.ibb.co/Gf69QR4R/Website.png" alt="Website" border="0"/>
+        <span>Website</span>
+      </a>
+      <a href="https://drive.google.com/file/d/1wyPCBaCLTiUx3aWMwIX3X1WryfnTL-Lp/view?usp=drive_link" target="_blank">
+        <img src="https://i.ibb.co/VY01h09d/Profile.png" alt="Profile" border="0"/>
+        <span>Profile</span>
+      </a>
+      <a href="https://www.facebook.com/share/1SwQWcGDNp/" target="_blank">
+        <img src="https://i.ibb.co/67VF7N5R/Facebook.png" alt="Facebook" border="0"/>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.tiktok.com/@jydn111_?_t=ZS-8ycWPn5Mth2&_r=1" target="_blank">
+        <img src="https://i.ibb.co/cStFGVqG/Tiktok.png" alt="Tiktok" border="0"/>
+        <span>TikTok</span>
+      </a>
+      <a href="https://www.instagram.com/jden0_111?igsh=MjYxbnVxbDRsOTh1" target="_blank">
+        <img src="https://i.ibb.co/39gCrw9n/Instagram.png" alt="Instagram" border="0"/>
+        <span>Instagram</span>
+      </a>
+      <a href="https://nhantien.momo.vn/hoangkimberry" target="_blank">
+        <img src="https://i.ibb.co/KpRgSv04/Momo.png" alt="Momo" border="0"/>
+        <span>Momo</span>
+      </a>
+      <a href="https://i.ibb.co/zVjxK9Jw/Jayden-tcb.jpg" target="_blank">
+        <img src="https://i.ibb.co/FktVzW2z/Tcb.png" alt="Techcombank" border="0"/>
+        <span>TCB</span>
+      </a>
+    </div>
+
+    <!-- ... -->
+  </div>
+
+  <script>
+    const translations = {
+      vi: {
+        title: "Nguyễn Thị Tuyết Hậu",
+        description: `
+      * Hoạt động trong lĩnh vực Logistics, chuyên cung cấp và điều phối các dịch vụ FCL/LCL & AIR FREIGHT, phụ trách CHÍNH thị trường Trung Quốc, UAE, EU và các tuyến Quốc tế khác.<br>
+      * Cung cấp giải pháp toàn diện từ: Tư vấn - Báo giá - Đặt chỗ - Theo dõi lô hàng - Khai báo hải quan - Vận tải nội địa,…<br>
+      * Luôn sẵn sàng hỗ trợ 24/7, đồng hành cùng khách hàng trong mọi khâu của chuỗi cung ứng đúng tiến độ và tối ưu chi phí.`,
+        consult: "Đăng Ký Tư Vấn",
+        roles: [
+          "Sales Logistics – Công ty Long Hoàng Logistics"
+        ]
+      },
+      en: {
+        title: "Ms. Winnie",
+        description: `
+        * Operating in the logistics sector, specializing in providing and managing FCL/LCL and air freight services, with primary responsibility for the China, UAE, EU markets, and other international routes.<br>
+        * Offering end-to-end solutions including consulting, quotation, booking, shipment tracking, customs declaration, and domestic transportation,…<br>
+        * Always ready to provide 24/7 support, accompanying clients through every stage of the supply chain to ensure on-time delivery and cost optimizatio.`,
+        consult: "Register for Consultation",
+        roles: [
+          "Sales Logistics – Long Hoang Logistics Company"
+        ]
+      }
+    };
+
+    function switchLang(lang) {
+      document.getElementById("title").innerHTML = translations[lang].title;
+      document.getElementById("description").innerHTML = translations[lang].description;
+      document.getElementById("consultButton").innerHTML = translations[lang].consult;
+
+      for (let i = 0; i < translations[lang].roles.length; i++) {
+        document.getElementById(`role${i + 1}`).innerHTML = translations[lang].roles[i];
+      }
+    }
+
+    function downloadVCard() {
+      const blob = new Blob([`
+BEGIN:VCARD
+VERSION:3.0
+FN:Tuyet Hau
+TEL:0376444593
+EMAIL:Winnie@longhoanglogistics.com
+END:VCARD
+      `], { type: 'text/vcard' });
+
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Vongocnhan.vcf';
+      link.click();
+    }
+  </script>
+</body>
+</html>
